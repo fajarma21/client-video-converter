@@ -1,0 +1,35 @@
+@keyframes rotating {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 32px;
+
+  p {
+    z-index: 1;
+    padding: 8px;
+    border: solid var(--accent);
+    border-width: 1px 0;
+    background-color: var(--background);
+  }
+}
+
+.loader {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px dashed var(--accent);
+  animation: rotating linear 10s infinite;
+}

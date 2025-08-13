@@ -1,0 +1,15 @@
+@use '../../../styles/mixin.scss' as mixin;
+
+.container {
+  padding: 16px;
+}
+
+.convertBtn {
+  @include mixin.baseButton;
+  height: 40px;
+  width: 100%;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  background-color: var(--accent);
+}

@@ -1,0 +1,14 @@
+@mixin shortDevice {
+  @media only screen and (max-height: 700px) {
+    @content;
+  }
+}
+
+@mixin baseButton {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

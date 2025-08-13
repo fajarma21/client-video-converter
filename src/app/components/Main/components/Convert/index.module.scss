@@ -1,0 +1,75 @@
+@use '../../../../../styles/mixin.scss' as mixin;
+
+@keyframes rotating {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(359deg);
+  }
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  margin: 16px 0;
+  padding: 1px;
+  border-radius: 8px;
+}
+
+.inner {
+  position: relative;
+  padding: 16px;
+  border-radius: 7px;
+  background-color: var(--background);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.logsBtn {
+  @include mixin.baseButton;
+  width: 18px;
+  height: 18px;
+}
+
+.animated {
+  --color: var(--accent);
+  --width: 25%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color);
+  transition: background-color 500ms;
+
+  &[data-spin] {
+    background-color: transparent;
+    animation: rotating linear 3s infinite;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: var(--width);
+      height: 300%;
+      background-image: linear-gradient(
+        to right,
+        transparent,
+        var(--accent),
+        transparent
+      );
+      transform: translate(-50%, -50%);
+    }
+  }
+}
