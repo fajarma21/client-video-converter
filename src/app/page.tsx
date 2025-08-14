@@ -14,7 +14,12 @@ export default function Home() {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
-    if (canUseDOM) setMultiThread(window.crossOriginIsolated);
+    if (canUseDOM) {
+      setMultiThread(window.crossOriginIsolated);
+      console.log(
+        `--- Cross Origin Isolated: ${!!window.crossOriginIsolated} ---`
+      );
+    }
     ffmpegRef.current = new FFmpeg();
     setInit(true);
   }, []);

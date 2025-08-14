@@ -1,0 +1,5 @@
+@mixin shortDevice {
+  @media only screen and (max-height: 700px) {
+    @content;
+  }
+}

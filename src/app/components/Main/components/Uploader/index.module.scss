@@ -1,4 +1,4 @@
-@use '../../../../../styles/mixin.scss' as mixin;
+@use '@/styles/components.scss' as mixin;
 
 .uploader {
   @include mixin.baseButton;
